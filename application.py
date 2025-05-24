@@ -20,14 +20,14 @@ def index():
 def predict_datapoint():
     if request.method=='POST':
         Temperature=float(request.form.get('Temperature'))
-        RH = float(request.form.get('Relative Humidity (RH) in %: 21 to 90'))
-        Ws = float(request.form.get('Wind Speed (WS) in km/h: 6 to 29'))
-        Rain = float(request.form.get('Rain total day in mm: 0 to 16.8 FWI Components'))
-        FFMC = float(request.form.get('Fine Fuel Moisture Code (FFMC) index from the FWI system: 28.6 to 92.5'))
-        DMC = float(request.form.get('Duff Moisture Code (DMC) index from the FWI system: 1.1 to 65.9'))
-        ISI = float(request.form.get('Initial Spread Index (ISI) index from the FWI system: 0 to 18.5'))
-        Classes = float(request.form.get('Classes: 1->Fire, 2->Not Fire'))
-        Region = float(request.form.get('Region: 0->Bejaia region and 1->Sidi Bel-abbes region'))
+        RH = float(request.form.get('RH'))
+        Ws = float(request.form.get('Ws'))
+        Rain = float(request.form.get('Rain'))
+        FFMC = float(request.form.get('FFMC'))
+        DMC = float(request.form.get('DMC'))
+        ISI = float(request.form.get('ISI'))
+        Classes = float(request.form.get('Classes'))
+        Region = float(request.form.get('Region'))
 
         new_data_scaled=standard_scaler.transform([[Temperature,RH,Ws,Rain,FFMC,DMC,ISI,Classes,Region]])
         result=ridge_model.predict(new_data_scaled)
