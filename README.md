@@ -1,4 +1,4 @@
-# lab-flask
+This project predicts the FWI (Fire Weather Index) of the Algerian forests.
 
 To run flask application 
 
