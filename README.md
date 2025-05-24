@@ -11,7 +11,7 @@ To access your flask application open new tab in and paste the url:
 
 For home page:
 ```
-http://127.0.0.1:5000/predictdata
+http://127.0.0.1:5000
 ```
 
 For predicting data:
