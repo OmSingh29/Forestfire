@@ -1,26 +1,91 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FWI Prediction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 450px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      font-size: 22px;
+      margin: 10px 0;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      font-size: 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    @media screen and (max-height: 600px) {
+      .container {
+        margin: 10px auto;
+        padding: 15px;
+      }
+      input[type="text"], button {
+        padding: 6px;
+        font-size: 13px;
+      }
+      h1, h2 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
 <body>
-    <div class="login">
-       <h1>FWI Prediction</h1>
-   
-        <!-- Main Input For Receiving Query to our ML -->
-       <form action="{{ url_for('predict_datapoint')}}" method="post">
-         <input type="text" name="Temperature" placeholder="Temperature (in °C)" required="required" /><br>
-           <input type="text" name="RH" placeholder="Relative Humidity (RH) in %" required="required" /><br>
-           <input type="text" name="Ws" placeholder="Wind Speed (WS) in km/h" required="required" /><br>
-           <input type="text" name="Rain" placeholder="Rain (in mm)" required="required" /><br>
-           <input type="text" name="FFMC" placeholder="Fine Fuel Moisture Code (FFMC) index" required="required" /><br>
-           <input type="text" name="DMC" placeholder="Duff Moisture Code (DMC) index" required="required" /><br>
-           <input type="text" name="ISI" placeholder="Initial Spread Index (ISI) index " required="required" /><br>
-           <input type="text" name="Classes" placeholder="Classes: 0->Not Fire, 1->Fire" required="required" /><br>
-           <input type="text" name="Region" placeholder="Region: 0->Bejaia region, 1->Sidi Bel-abbes region" required="required" /><br>
-   
-   
-   
-           <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-       </form>
-    <h2>
-       THE Fire Weather Index (FWI) prediction is {{result}}
-    </h2>
-   </body>
+  <div class="container">
+    <h1>FWI Prediction</h1>
+
+    <form action="{{ url_for('predict_datapoint')}}" method="post">
+      <input type="text" name="Temperature" placeholder="Temperature (in °C)" required />
+      <input type="text" name="RH" placeholder="Relative Humidity (RH) in %" required />
+      <input type="text" name="Ws" placeholder="Wind Speed (WS) in km/h" required />
+      <input type="text" name="Rain" placeholder="Rain (in mm)" required />
+      <input type="text" name="FFMC" placeholder="Fine Fuel Moisture Code (FFMC) index" required />
+      <input type="text" name="DMC" placeholder="Duff Moisture Code (DMC) index" required />
+      <input type="text" name="ISI" placeholder="Initial Spread Index (ISI) index" required />
+      <input type="text" name="Classes" placeholder="Classes: 0 → Not Fire, 1 → Fire" required />
+      <input type="text" name="Region" placeholder="Region: 0 → Bejaia region, 1 → Sidi Bel-abbes region" required />
+      <button type="submit">Predict</button>
+    </form>
+
+    <h2>The Fire Weather Index (FWI) prediction is {{ result }}</h2>
+  </div>
+</body>
 </html>
