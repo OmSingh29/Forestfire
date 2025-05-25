@@ -5,15 +5,15 @@
    
         <!-- Main Input For Receiving Query to our ML -->
        <form action="{{ url_for('predict_datapoint')}}" method="post">
-         <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
-           <input type="text" name="RH" placeholder="RH" required="required" /><br>
-           <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
-           <input type="text" name="Rain" placeholder="Rain" required="required" /><br>
-           <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br>
-           <input type="text" name="DMC" placeholder="DMC" required="required" /><br>
-           <input type="text" name="ISI" placeholder="ISI" required="required" /><br>
-           <input type="text" name="Classes" placeholder="Classes" required="required" /><br>
-           <input type="text" name="Region" placeholder="Region" required="required" /><br>
+         <input type="text" name="Temperature" placeholder="Temperature (in °C)" required="required" /><br>
+           <input type="text" name="RH" placeholder="Relative Humidity (RH) in %" required="required" /><br>
+           <input type="text" name="Ws" placeholder="Wind Speed (WS) in km/h" required="required" /><br>
+           <input type="text" name="Rain" placeholder="Rain (in mm)" required="required" /><br>
+           <input type="text" name="FFMC" placeholder="Fine Fuel Moisture Code (FFMC) index" required="required" /><br>
+           <input type="text" name="DMC" placeholder="Duff Moisture Code (DMC) index" required="required" /><br>
+           <input type="text" name="ISI" placeholder="Initial Spread Index (ISI) index " required="required" /><br>
+           <input type="text" name="Classes" placeholder="Classes: 0->Not Fire, 1->Fire" required="required" /><br>
+           <input type="text" name="Region" placeholder="Region: 0->Bejaia region, 1->Sidi Bel-abbes region" required="required" /><br>
    
    
    
