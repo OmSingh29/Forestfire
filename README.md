@@ -21,5 +21,5 @@ http://127.0.0.1:5000/predictdata
 
 Live site Link:
 ```
-https://forestfire-euu6.onrender.com
+https://forestfire-euu6.onrender.com/predictdata
 ```
